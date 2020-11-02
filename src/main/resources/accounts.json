@@ -1,0 +1,38 @@
+[
+  {
+    "accountNbr": "0000001",
+    "accountName": "David Skuse Savings",
+    "accountType": "SAV",
+    "currencyCode": "THB",
+    "balance": 20000.00,
+    "accountOwners": [
+      {
+        "isPrimary": true,
+        "owner": {
+          "customerName": "David Skuse",
+          "customerNumber": "00000099"
+        }
+      },
+      {
+        "isPrimary": false,
+        "owner": {
+          "customerName": "Diana Skuse",
+          "customerNumber": "00000100"
+        }
+      }
+    ]
+  },
+  {
+    "accountNbr": "0000002",
+    "accountName": "Rodger Ramjet Savings",
+    "accountType": "SAV",
+    "currencyCode": "USD",
+    "balance": 35000.00,
+    "accountOwners": [
+      {
+        "customerName": "Rodger Ramjet",
+        "customerNumber": "00000025"
+      }
+    ]
+  }
+]

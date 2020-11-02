@@ -1,0 +1,47 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://dastec.one/demo-web-service"
+           targetNamespace="http://dastec.one/demo-web-service" elementFormDefault="qualified">
+
+
+    <xs:element name="getAccountRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accountNbr" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAccountResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="account" type="tns:account"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="account">
+        <xs:sequence>
+            <xs:element name="accountNbr" type="xs:string"/>
+            <xs:element name="accountName" type="xs:string"/>
+            <xs:element name="accountType" type="xs:string"/>
+            <xs:element name="currencyCode" type="xs:string"/>
+            <xs:element name="balance" type="xs:decimal"/>
+            <xs:element name="accountOwners" type="tns:accountowner" nillable="true" minOccurs="0"
+                        maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="accountowner">
+        <xs:sequence>
+            <xs:element name="isPrimary" type="xs:boolean"/>
+            <xs:element name="owner" type="tns:customer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="customer">
+        <xs:sequence>
+            <xs:element name="customerName" type="xs:string"/>
+            <xs:element name="customerNumber" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
